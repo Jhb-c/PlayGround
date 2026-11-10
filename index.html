@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#a9e3dc"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='84'%3E🦆%3C/text%3E%3C/svg%3E"><title>Loopy Ducky — Pond Patrol</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700;800&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="game-shell">
+  <div id="scene" aria-label="3D duck racing game"></div>
+  <div class="vignette"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Loopy Ducky home"><span class="brand-mark">◉</span><span>LOOPY<span class="brand-light">DUCKY</span></span></a>
+    <div class="level-pill"><span class="sun-dot"></span><span>THE GREAT POND</span><b>DAY 01</b></div>
+    <button id="sound-btn" class="icon-btn" aria-label="Toggle sound">♫</button>
+  </header>
+  <section class="hud" id="hud" aria-live="polite">
+    <div class="stat-card"><span class="stat-label">SCORE</span><strong id="score">00000</strong><span class="stat-icon star">★</span></div>
+    <div class="stat-card distance-card"><span class="stat-label">DISTANCE</span><strong><span id="distance">0</span><small>m</small></strong><div class="distance-track"><i id="distance-fill"></i></div></div>
+    <div class="heart-row" id="hearts"><span>♥</span><span>♥</span><span>♥</span></div>
+  </section>
+  <div id="combo" class="combo">NICE CATCH! <b>×2</b></div>
+  <div id="toast" class="toast"></div>
+  <section class="overlay" id="menu">
+    <div class="menu-card">
+      <div class="eyebrow"><span>✦</span> THE POND IS YOURS <span>✦</span></div>
+      <h1>LOOPY<br><em>DUCKY!</em></h1>
+      <p class="subtitle">A little duck. A big adventure.</p>
+      <div class="duck-picker"><div class="picker-heading"><span>CHOOSE YOUR DUCK</span><span class="unlocked">ALL UNLOCKED <b>✓</b></span></div><div class="skins" id="skins"></div></div>
+      <button id="play-btn" class="play-btn"><span>LET'S SPLASH</span><b>→</b></button>
+      <p class="howto"><span>← →</span> SWIM &nbsp;·&nbsp; <span>↑ ↓</span> HOP &nbsp;·&nbsp; <span>SPACE</span> DASH</p>
+    </div>
+  </section>
+  <section class="overlay hidden" id="pause-panel"><div class="small-card"><div class="eyebrow">TAKE A BREATHER</div><h2>PAUSED</h2><button class="play-btn" id="resume-btn"><span>BACK TO IT</span><b>→</b></button></div></section>
+  <section class="overlay hidden" id="result-panel"><div class="small-card results"><div class="eyebrow">WHAT A SPLASH!</div><h2 id="result-title">POND LEGEND</h2><p class="result-score"><span>YOUR SCORE</span><b id="final-score">0</b></p><p id="result-copy">The pond will remember this.</p><button class="play-btn" id="again-btn"><span>GO AGAIN</span><b>↻</b></button></div></section>
+  <div class="bottom-hint" id="bottom-hint"><span>✧</span> Catch the golden hoops for a mega splash <span>✧</span></div>
+  <div class="touch-controls" aria-label="Touch controls"><button data-control="left">◀</button><div><button data-control="up">▲</button><button data-control="down">▼</button></div><button data-control="right">▶</button><button class="dash-touch" data-control="dash">⚡</button></div>
+  <button class="pause-btn" id="pause-btn" aria-label="Pause game">Ⅱ</button>
+  <footer class="footer"><span>© POND PATROL</span><span>NO DUCK LEFT BEHIND <b>♥</b></span></footer>
+</main>
+<script type="module" src="game.js"></script>
+</body>
+</html>
