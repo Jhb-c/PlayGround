@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#b9ecf4" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐤</text></svg>">
+  <title>Loopy Ducky — Loop, splash, repeat!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"}}
+  </script>
+  <script type="module" src="game.js"></script>
+</head>
+<body>
+  <main class="game-shell">
+    <div id="game-view" aria-label="3D ducky running game"></div>
+    <div class="scene-wash"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Loopy Ducky home"><span class="brand-duck">◉</span><span>loopy<span class="brand-soft">ducky</span></span></a>
+      <div class="top-actions">
+        <div class="all-access"><span class="sparkle">✦</span> EVERYTHING UNLOCKED</div>
+        <button class="icon-button sound-toggle" id="sound-toggle" aria-label="Toggle sound">♫</button>
+      </div>
+    </header>
+
+    <section class="hud" id="hud" aria-live="polite">
+      <div class="hud-pill score-pill"><span class="pill-icon">◈</span><span><small>SCORE</small><strong id="score">00000</strong></span></div>
+      <div class="hud-pill coin-pill"><span class="pill-icon">◉</span><span><small>DUCK COINS</small><strong id="coins">0</strong></span></div>
+      <button class="icon-button pause-button" id="pause-button" aria-label="Pause game">Ⅱ</button>
+    </section>
+
+    <section class="welcome-panel" id="welcome-panel">
+      <div class="eyebrow"><span class="eyebrow-line"></span> THE SILLIEST RUNNER IN THE POND <span class="eyebrow-line"></span></div>
+      <h1>Loopy <span>Ducky!</span></h1>
+      <p class="welcome-copy">Waddle your way through the loop.<br>Collect coins. Avoid the soggy stuff.</p>
+      <div class="duck-selector" aria-label="Choose your duck">
+        <button class="skin-arrow" id="skin-prev" aria-label="Previous duck">‹</button>
+        <div class="skin-card"><span class="skin-emoji" id="skin-emoji">🐤</span><span class="skin-info"><strong id="skin-name">Sunny</strong><small>ALL DUCKS UNLOCKED <span>✦</span></small></span><span class="skin-check">✓</span></div>
+        <button class="skin-arrow" id="skin-next" aria-label="Next duck">›</button>
+      </div>
+      <button class="play-button" id="play-button"><span>LET'S WADDLE</span><b>→</b></button>
+      <div class="controls-hint"><span>←</span><span>→</span> OR <span class="keycap">A</span><span class="keycap">D</span> TO DODGE <i>•</i> <span class="keycap">SPACE</span> TO HOP</div>
+    </section>
+
+    <section class="result-panel hidden" id="result-panel">
+      <div class="result-stamp" id="result-stamp">SPLASH!</div>
+      <h2 id="result-title">Nice try, ducky!</h2>
+      <p id="result-copy">Even the best ducks take a dip.</p>
+      <div class="result-stats"><div><small>YOUR SCORE</small><strong id="final-score">0</strong></div><div><small>COINS SCOOPED</small><strong id="final-coins">0</strong></div></div>
+      <button class="play-button" id="again-button"><span>WADDLE AGAIN</span><b>↻</b></button>
+    </section>
+
+    <div class="toast hidden" id="toast">PAUSED <span>Press P to hop back in</span></div>
+    <div class="mobile-controls" id="mobile-controls"><button data-move="-1" aria-label="Move left">‹</button><button data-move="jump" aria-label="Jump">↑</button><button data-move="1" aria-label="Move right">›</button></div>
+    <footer><span>MADE FOR MUDDY LITTLE ADVENTURES</span><span class="footer-dot">✦</span><span>LOOP FOREVER, SCOOP TREASURE</span></footer>
+  </main>
+</body>
+</html>
